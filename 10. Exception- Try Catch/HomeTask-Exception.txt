@@ -1,0 +1,68 @@
+
+Home Task-1
+--------------------------------------
+
+/*In this program, Input five integer numbers from user through keyboard using the function nextInt() of Scanner class,
+ * and if number in different format is found on the user input (i.e. floating point number or any number in String),
+   then Java run-time system throws an exception named "InputMismatchException" in your program. 
+ * Give appropriate try-catch block to handle the program and print the exception detail in order to warn user.
+ * Please do not terminate the program even exception occurs....Give user chances to input again  
+     until you take five valid integer numbers from the user. 
+  * At the end, print the summation of the integers.
+
+
+Home Task-2
+-------------------------
+/*....Design your own Exception class "EitaIntegerNoiException" that extends the Builtin "Exception" class. 
+i) It should contain one private String data 'msg'.
+ii) and A constuctor with a String argument for intializing 'msg'.
+Also give two methods:
+ ==> One method is an overridden toString() method in order to return the EitaIntegerNoiException object's properties.
+//    Here in this example you should return the String representation of the value of 'msg'. 
+==> Second method  is the "printError()" method that prints the reason of exception event.
+*/
+
+/*..............Then inside the Tester class do the following:.....
+
+i) Design a static method : "static int readInteger( ) throws EitaIntegerNoiException {//......}"
+   This method will take a String form the user using Scanner. 
+   Then it will check if the number was ‘int’ or ‘float’ by checking presence of the decimal point in the input.
+   It will throw an exception when a floating-point number is entered. 
+   Otherwise, it will return the integer number.
+
+ // HINT:...........................................................
+
+//Update following lines so that this method can throw Exception:
+
+    int readInteger( ) throws EitaIntegerNoiException
+   {
+        Scanner k = new Scanner(System.in);
+        String s;
+        int answer;
+        //Take the input from the user in s
+        
+        if ('s' contains the decimal point ".")
+       {
+            // create exception 
+            // and then throw because
+            // amake bollo read integer
+            // aar dichche float / double
+            
+        }else{
+            // convert the String 's' into integer answer
+            
+        }
+
+        // return the answer
+        
+    }
+//------------------------------------------
+
+ii)In the main method call the readInteger( ) method.
+   Give appropriate try-catch block to handle the 'EitaIntegerNoiException' type exception. 
+.........................................................................................*/
+
+
+
+
+

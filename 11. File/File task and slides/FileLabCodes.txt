@@ -1,0 +1,173 @@
+
+//------------Reading file ----------------
+import java.io.*;
+import java.util.*;
+
+public class FileIOLab {
+    public static void main(String[] args)
+    {
+
+        try {
+         FileReader reader = new FileReader("src\\test.txt");
+         BufferedReader bufferedReader = new BufferedReader(reader);
+
+         String line;
+
+       while ((line = bufferedReader.readLine()) != null) {
+          System.out.println("The line is: "+ line);
+
+        // //Optional Part....if you want to tokenize your text........
+//            StringTokenizer st1 =
+//                    new StringTokenizer(line, " ,.:;");
+//            System.out.println("The Tokens are: ");
+//            while (st1.hasMoreTokens())
+//                System.out.println(st1.nextToken());
+
+        }
+
+      reader.close();
+
+       }
+        catch (IOException e) {
+            System.out.println(e);
+           //e.printStackTrace();
+        }
+
+       System.out.println("Rest of the code.....");
+    }
+}
+//------------------------------------------------------------------------------------------
+
+//------------Alternate way to read file using Scanner----------------
+import java.io.*;
+import java.util.*;
+
+public class FileIOLab {
+    public static void main(String[] args)
+    {
+       String amarFileNameAndLocation  = "src\\test.txt";
+        File amarFile = new File ( amarFileNameAndLocation );
+
+       // Scanner  s =new Scanner (System.in);
+        try {
+            Scanner s = new Scanner(amarFile);
+
+            while (s.hasNextLine()) //reading file until end of file
+           {
+                String ektaLine;
+                ektaLine = s.nextLine();
+                System.out.println(ektaLine);
+            }
+        }
+        catch(IOException e)
+        {
+            System.out.println(e);
+        }
+    }
+}
+
+//////////////////////////////------------Writing file ----------------//////////////////////////////////////////////////
+import java.io.*;
+import java.util.*;
+
+public class FileIOLab {
+    public static void main(String[] args)
+    {
+     try {
+
+            File myObj = new File("D:\\sample.txt");
+            if (myObj.createNewFile()) {
+                System.out.println("File created: " + myObj.getName());
+            } else {
+                System.out.println("File already exists.");
+            }
+            FileWriter writer =new FileWriter(myObj,true);
+            //FileWriter writer =new FileWriter("D:\\sample.txt",false);
+            BufferedWriter bufferedWriter =new BufferedWriter(writer);
+
+            bufferedWriter.write("Hello World");
+            bufferedWriter.newLine();
+            bufferedWriter.write("See You Again!");
+
+            bufferedWriter.close();
+            writer.close();
+        }catch(IOException e) {
+            System.out.println("An error occurred.");
+            e.printStackTrace();
+        }
+        System.out.println("Rest of the code.....");
+    }
+}
+//---------------------------------------------------------------------------
+-//-------------------Obtaining Standard Properties of a File Object----------------------------------------------------------------
+
+import java.io.*;
+import java.util.*;
+
+public class FileIOLab {
+    public static void main(String[] args)
+    {
+
+          //String fname ="D://Downloads";   //initialize the filename
+        String fname ="D://MyFile.txt";         // or directory name
+
+        //pass the filename
+        // or directory name to File object
+        File f = new File(fname);
+
+        //apply File class methods on File object
+        System.out.println("File name :"+f.getName());
+        System.out.println("Path: "+f.getPath());
+        System.out.println("Absolute path:" +f.getAbsolutePath());
+        System.out.println("Parent:"+f.getParent());
+        System.out.println("Exists :"+f.exists());
+        if(f.exists())
+        {
+            System.out.println("Is writeable:"+f.canWrite());
+            System.out.println("Is readable:"+f.canRead());
+            System.out.println("Is a directory:"+f.isDirectory());
+            System.out.println("Is a file:" +f.isFile());
+            System.out.println("File Size in bytes "+f.length());
+        }
+
+
+    }
+}
+
+
+//--------------------------------Listing Files---------------------------------------------
+import java.io.*;
+import java.util.*;
+
+public class FileIOLab {
+    public static void main(String[] args)
+    {
+     String dirpath="C:\\Users\\user\\IdeaProjects\\FileTesting";
+        String dname="src";
+
+        //create File object with dirpath and dname
+        File f = new File(dirpath, dname);
+
+        //if directory exists,then
+        if(f.exists())
+        {
+            //get the contents into arr[]
+            //now arr[i] represent either a File or Directory
+            String arr[]=f.list();
+
+            //find no. of entries in the directory
+            int n=arr.length;
+
+            //displaying the entries
+            for (int i = 0; i < n ; i++) {
+                System.out.println(arr[i]);
+
+            }
+            System.out.println("No of entries in this directory "+n);
+        }
+        else
+            System.out.println("Directory not found");
+
+
+    }
+}

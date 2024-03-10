@@ -1,0 +1,58 @@
+Home Task-1
+-------------
+
+Write a java application as follows:
+
+Create a Student Interface ‘StInterface’ with the methods ‘setName’, ‘setID’, ‘getName’ and ‘getID’.
+
+Create the class ‘Student’ with ‘name’, ‘id’ and ‘address field’ implementing the ‘StInterface’ to manipulate the Student information using the necessary methods.
+
+Create an array of objects of Student. Then input the number of students to allocate student array dynamically and take Student information. Now print the student list alphabetically.
+
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------
+Home Task-2
+------------
+
+Multiple inheritance can be achieved in Java by allowing a class to inherit from one other class and an unlimited number of interfaces.
+Complete the following program demonstrating multiple inheritance, which inherits a class and an interface:
+
+interface Engine{
+    void setHorsePower(int hrsPwr);
+    int getHorsePower();
+    void setMaker(String mk);
+    String getMaker();
+}
+
+class Body{
+	private String color;
+
+    void setColor(String clr) {
+		color = clr;
+	}
+
+    String getColor() {
+		return color;
+	}
+}
+
+Now your task is to:
+
+1. Design a class 'Car' that inherits 'Body' class and implements 'Engine' interface.
+   
+2. The class 'Car' has two additional data members: one integer variable 'hp' and one String variable 'maker'.
+   Create a constructor with arguments in Car class to initialize 'hp', 'maker' and a inherited feature 'color'. 
+
+3. The 'Car' class should provide the body of four abstract methods.
+
+4. Finally, create a Tester class which should contain the main method. Inside the main method 
+   create two instances in the following way:
+
+  Car toyota_Corolla = new Car(100, "White", "Toyota");
+  Car pajero = new Car(800, "Black", "Mitsubishi");
+
+
+
+
+
+
