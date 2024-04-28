@@ -1,2 +1,2 @@
-### Java Lab
-##### Programs witten in Java including lecture materials and experiment reports.
+# Java Lab
+Programs witten in Java including lecture materials and experiment reports.
